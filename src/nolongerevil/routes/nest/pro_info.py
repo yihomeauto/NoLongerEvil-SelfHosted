@@ -6,7 +6,6 @@ from nolongerevil.lib.logger import get_logger
 
 logger = get_logger(__name__)
 
-
 async def handle_pro_info(request: web.Request) -> web.Response:
     """Handle installer information lookup request.
 
@@ -20,17 +19,25 @@ async def handle_pro_info(request: web.Request) -> web.Response:
 
     logger.debug(f"Pro info request for code: {code}")
 
-    # Return empty/default pro info
+    # https://github.com/codykociemba/NoLongerEvil-Thermostat/blob/774da29a29bf707c73a5fa666776819d09d09ee7/server/src/routes/nest/proInfo.ts
     return web.json_response(
         {
+            "id": 1,
             "pro_id": code,
-            "company_name": "Self-Hosted",
-            "phone": "",
-            "email": "",
+            "dba": 'nolongerevil',
+            #"street_address_1": '7975 N Hayden Rd',
+            #"street_address_2": 'Suite A210',
+            "locality": 'A Self-Hosted Thermostat',
+            #"region": 'Arizona',
+            #"postal_code": '85388',
+            #"email": 'cody@hackhouse.io',
+            #"phone": '(855) 994-1337',
+            "website": 'https://nolongerevil.com',
+            "rating": 5.0,
+            #"plain_email_address_for_referrals": 'cody@hackhouse.io',
         }
     )
-
-
+    
 def create_pro_info_routes(app: web.Application) -> None:
     """Register pro_info routes.
 
