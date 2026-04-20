@@ -6,6 +6,7 @@ from nolongerevil.lib.logger import get_logger
 
 logger = get_logger(__name__)
 
+
 async def handle_pro_info(request: web.Request) -> web.Response:
     """Handle installer information lookup request.
 
@@ -25,19 +26,20 @@ async def handle_pro_info(request: web.Request) -> web.Response:
         {
             "id": 1,
             "pro_id": code,
-            "dba": 'nolongerevil',
-            #"street_address_1": '',
-            #"street_address_2": '',
-            "locality": 'A Self-Hosted Thermostat',
-            #"region": '',
-            #"postal_code": '',
-            #"email": '',
-            #"phone": '',
-            "website": 'https://nolongerevil.com',
+            "dba": "nolongerevil",
+            # "street_address_1": "",
+            # "street_address_2": "",
+            "locality": "A Self-Hosted Thermostat",
+            # "region": "",
+            # "postal_code": "",
+            # "email": "",
+            # "phone": "",
+            "website": "https://nolongerevil.com",
             "rating": 5.0,
-            #"plain_email_address_for_referrals": '',
+            # "plain_email_address_for_referrals": "",
         }
     )
+
 
 def create_pro_info_routes(app: web.Application) -> None:
     """Register pro_info routes.
